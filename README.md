@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+* 
+Testing specs for chef 
+- has a name (length between 5 and 40)
+- has valid email  and is unique (length between 5 and 105)
