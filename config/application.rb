@@ -23,7 +23,8 @@ module Project
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    Rails.application.config.hosts<<"f8e9f9cb97914333a3b4219c3900c84b.vfs.cloud9.us-east-1.amazonaws.com"
+    Rails.application.config.hosts<<"0653a871a1c646a8831f7adc7975cdee.vfs.cloud9.us-east-1.amazonaws.com"
+    #Rails.application.config.hosts<<"f8e9f9cb97914333a3b4219c3900c84b.vfs.cloud9.us-east-1.amazonaws.com"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
