@@ -27,8 +27,8 @@ body {
 }
 
 .nav_item {
-  margin-left: 25px;
-  float: left;
+  margin-right: 25px;
+  float: right;
   margin-top: 20px;
 }
 
@@ -56,6 +56,7 @@ h2 {
   color: #777;
 }
 
+
 .left {
   text-align: left;
   letter-spacing: .5px;
@@ -66,4 +67,32 @@ h2 {
   margin-top: 25px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  background-color: #581845;;
+}
+
+.chef_info {
+  margin-top: 2px;
+}
+
+.gravatar {
+  border-radius: 10px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.well {
+  background-color: #EDEDED;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
 }
