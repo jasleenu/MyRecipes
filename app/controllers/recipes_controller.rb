@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
   
-  def home
-    @recipes = Recipe.all
+  def index
+    
+    @recipes = Recipe.paginate(page: params[:page], per_page: 4)
+   # @recipes = Recipe.all.sort_by{|likes| likes.thumbs_up_total}.reverse
   end
   
   def new
@@ -17,10 +19,6 @@ class RecipesController < ApplicationController
     else
       render :new
     end
-  end
-  
-  def index
-    @recipes = Recipe.all
   end
   
   def show
@@ -41,6 +39,19 @@ class RecipesController < ApplicationController
       render :edit
     end
   end
+  
+  def like
+    @recipe = Recipe.find(params[:id])
+    like = Like.create(like: params[:like],chef: Chef.first, recipe: @recipe)
+    if like.valid?
+      flash[:success] = "Your selection was successful."
+      redirect_back(fallback_location: like_recipe_path)
+    else
+      flash[:danger] = "You can only like/dislike a recipe once."
+       redirect_back(fallback_location: like_recipe_path)
+    end
+  end
+  
   private 
   
   def recipe_params

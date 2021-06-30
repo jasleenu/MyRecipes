@@ -1,11 +1,20 @@
 class Recipe < ApplicationRecord
   belongs_to :chef
+  has_many :likes
   validates :chef_id, presence: true
   validates :recipename, presence: true, length: {minimum:5, maximum: 50}
   validates :summary, presence: true, length: {miminum:10, maximum:100}
   mount_uploader :picture, PictureUploader
   validate :picture_size
+  default_scope -> {order(updated_at: :desc)}
 
+  def thumbs_up_total
+    self.likes.where(like: true).size
+  end
+  def thumbs_down_total
+    self.likes.where(like: false).size
+  end
+  
   private
   def picture_size
     if picture.size > 5.megabytes
