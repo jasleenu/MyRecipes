@@ -1,6 +1,11 @@
 class Recipe < ApplicationRecord
   belongs_to :chef
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :recipe_styles, dependent: :destroy
+  has_many :styles, through: :recipe_styles
+  has_many :recipe_ingredients, dependent: :destroy
+  has_many :ingredients, through: :recipe_ingredients
+  
   validates :chef_id, presence: true
   validates :recipename, presence: true, length: {minimum:5, maximum: 50}
   validates :summary, presence: true, length: {miminum:10, maximum:100}

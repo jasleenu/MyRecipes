@@ -14,9 +14,11 @@
 </div>
 <% @chef.recipes.each do |recipe| %>
     <div class="row">
-        <div class="col-lg-6 well col-lg-offset-3">
+        <div class="col-lg-6 well col-lg-offset-2">
           <h4><%= link_to recipe.recipename, recipe_path(recipe) %></h4>
           <p> <%= recipe.summary %></p>
+           <p>Styles: <%=render recipe.styles %></p>
+           <p>Ingredients: <%=render recipe.ingredients %></p>
           <p>
             <span class="quiet"><small>Created: <%= time_ago_in_words(recipe.created_at) %>,</small></span>
             <span class="quiet"><small>Updated: <%= time_ago_in_words(recipe.updated_at) %></small></span>
@@ -29,6 +31,10 @@
              <i class= "glyphicon glyphicon-thumbs-down"></i>&nbsp<%= recipe.thumbs_down_total %>
                <%end %>
             </div>
+             
+        </div>
+        <div class ="col-md-3">
+              <%= image_tag(recipe.picture.url,size: "250x150", class: "gravatar") if recipe.picture? %>
         </div>
     </div>
 <% end %>

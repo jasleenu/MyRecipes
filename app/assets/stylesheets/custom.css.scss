@@ -32,6 +32,12 @@ body {
   margin-top: 20px;
 }
 
+.nav_ul_item {
+  padding-left: 25px;
+  float: left;
+  
+}
+
 .center {
   text-align: center;
 }
@@ -106,4 +112,19 @@ span.picture{
 
 .show_recipe{
   margin: 10px 10px 10px 10px;
+}
+
+.input_checkbox input {
+  width: auto !important;
+}
+
+.like_icon {
+  display: inline;
+  background-color: #EDEDED;
+  border: none;
+  outline: none;
+}
+.btn_delete {
+    width: auto !important;
+    margin-right: 10px;
 }
