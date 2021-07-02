@@ -24,7 +24,7 @@ gem 'will_paginate' ,'~> 3.3.0'
 gem 'bootstrap-will_paginate','~> 1.0.0'
 gem 'bcrypt','~> 3.1.16'
 gem 'jquery-turbolinks'
-gem 'fog-aws'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -58,7 +58,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
   gem 'rails_12factor'
 end
 
